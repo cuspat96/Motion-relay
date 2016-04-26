@@ -89,9 +89,6 @@ void getMotion(){
     }
   }
 }
-void getLight(){
-  lightLevel = analogRead(lightSensorPin);
-}
 
 ///////////////////////////////////////////////////////////////////////////
 //SETUP & LOOP
@@ -105,7 +102,7 @@ void setup() {
 }
 
 void loop() {
-    getLight();
+    lightLevel = analogRead(lightSensorPin);
     if(lastDetection == 0 && manuallySwitched == false){
        setRelayTo = true;
        lastDetection = millis();
